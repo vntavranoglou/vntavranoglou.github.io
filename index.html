@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vasiliki Ntavranoglou | Legal AI Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B3A6B;
+    --blue: #2E5FA3;
+    --light-blue: #D6E4F7;
+    --cream: #F8F5F0;
+    --warm-white: #FDFCFA;
+    --ink: #1a1a2e;
+    --mid: #4a5568;
+    --light: #8899aa;
+    --accent: #C9A96E;
+    --accent-light: #F5ECD7;
+    --border: #D8E4F2;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--warm-white);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(253,252,250,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--navy);
+  }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--mid);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--navy); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--navy) 0%, #0d2147 55%, #1a2e5a 100%);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 120px 80px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -100px; right: -150px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(46,95,163,0.35) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -80px; left: 40%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em;
+    color: var(--accent); text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-tag::before {
+    content: ''; display: block;
+    width: 40px; height: 1px; background: var(--accent);
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 300; line-height: 1.05;
+    color: #ffffff; letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+  .hero h1 em {
+    font-style: italic; color: var(--accent);
+  }
+  .hero-sub {
+    font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.65);
+    max-width: 520px; margin-bottom: 48px; line-height: 1.7;
+  }
+  .hero-badges {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 48px;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 14px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 100px;
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.8);
+    text-transform: uppercase;
+  }
+  .badge.gold {
+    background: rgba(201,169,110,0.15);
+    border-color: rgba(201,169,110,0.4);
+    color: var(--accent);
+  }
+  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 28px;
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; text-decoration: none;
+    border-radius: 4px; transition: all 0.2s; cursor: pointer;
+    border: none;
+  }
+  .btn-primary {
+    background: var(--accent); color: var(--navy);
+  }
+  .btn-primary:hover { background: #d4b07a; transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.7); color: #fff; }
+
+  /* scroll indicator */
+  .scroll-line {
+    position: absolute; bottom: 40px; left: 80px;
+    display: flex; align-items: center; gap: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; color: rgba(255,255,255,0.35);
+    letter-spacing: 0.15em; text-transform: uppercase;
+  }
+  .scroll-line::after {
+    content: ''; display: block;
+    width: 60px; height: 1px; background: rgba(255,255,255,0.2);
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 90px 80px; }
+  section:nth-child(even) { background: var(--cream); }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--blue);
+    margin-bottom: 12px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before {
+    content: ''; display: block;
+    width: 30px; height: 1px; background: var(--blue);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300; color: var(--navy);
+    line-height: 1.1; margin-bottom: 48px;
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: start;
+  }
+  .about-text p {
+    font-size: 0.95rem; color: var(--mid);
+    margin-bottom: 20px; line-height: 1.8;
+  }
+  .about-text p strong { color: var(--navy); font-weight: 600; }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .stat-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 8px; padding: 24px;
+  }
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem; font-weight: 600;
+    color: var(--navy); line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--light);
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .skill-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 8px; padding: 28px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .skill-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+  .skill-icon {
+    width: 40px; height: 40px;
+    background: var(--light-blue);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+  }
+  .skill-card h3 {
+    font-size: 0.9rem; font-weight: 600;
+    color: var(--navy); margin-bottom: 10px;
+  }
+  .skill-card p {
+    font-size: 0.8rem; color: var(--mid); line-height: 1.6;
+  }
+
+  /* ── CERTIFICATIONS ── */
+  .certs-list { display: flex; flex-direction: column; gap: 16px; }
+  .cert-item {
+    display: flex; align-items: center; gap: 20px;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 18px 24px;
+    transition: border-left-color 0.2s;
+  }
+  .cert-item:hover { border-left-color: var(--accent); }
+  .cert-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem; color: var(--light);
+    letter-spacing: 0.08em; white-space: nowrap;
+    min-width: 50px;
+  }
+  .cert-name {
+    font-size: 0.88rem; font-weight: 500; color: var(--navy);
+  }
+  .cert-issuer {
+    font-size: 0.75rem; color: var(--mid); margin-top: 2px;
+  }
+  .cert-badge-new {
+    margin-left: auto;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--accent-light);
+    color: #8B6914;
+    padding: 3px 8px; border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  /* ── EXPERIENCE ── */
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 1px; background: var(--border);
+  }
+  .timeline-item { position: relative; margin-bottom: 48px; }
+  .timeline-item::before {
+    content: ''; position: absolute;
+    left: -36px; top: 6px;
+    width: 8px; height: 8px;
+    background: var(--blue); border-radius: 50%;
+    border: 2px solid var(--warm-white);
+    box-shadow: 0 0 0 1px var(--blue);
+  }
+  .timeline-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem; color: var(--blue);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .timeline-title {
+    font-size: 1rem; font-weight: 600; color: var(--navy);
+    margin-bottom: 2px;
+  }
+  .timeline-company {
+    font-size: 0.82rem; color: var(--mid); margin-bottom: 12px;
+  }
+  .timeline-points { list-style: none; }
+  .timeline-points li {
+    font-size: 0.82rem; color: var(--mid);
+    padding: 4px 0 4px 16px; position: relative; line-height: 1.6;
+  }
+  .timeline-points li::before {
+    content: '–'; position: absolute; left: 0; color: var(--blue);
+  }
+  .ai-highlight {
+    background: var(--light-blue);
+    color: var(--navy);
+    padding: 1px 5px; border-radius: 3px;
+    font-weight: 500;
+  }
+
+  /* ── PROJECTS / PORTFOLIO ── */
+  .projects-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .project-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 8px; padding: 32px;
+    transition: all 0.2s;
+  }
+  .project-card:hover { border-color: var(--blue); box-shadow: 0 4px 20px rgba(27,58,107,0.08); }
+  .project-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--blue);
+    margin-bottom: 12px;
+  }
+  .project-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 400;
+    color: var(--navy); margin-bottom: 10px;
+  }
+  .project-card p {
+    font-size: 0.82rem; color: var(--mid); line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .project-tools { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tool-pill {
+    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.05em;
+    padding: 3px 10px; border-radius: 100px;
+    background: var(--light-blue); color: var(--navy);
+  }
+  .project-placeholder {
+    background: linear-gradient(135deg, var(--light-blue) 0%, #e8f0fb 100%);
+    border: 2px dashed var(--border);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 40px 32px; min-height: 200px;
+    border-radius: 8px; color: var(--mid);
+  }
+  .project-placeholder .plus { font-size: 2rem; color: var(--blue); margin-bottom: 8px; }
+  .project-placeholder p { font-size: 0.8rem; }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    background: var(--navy);
+    color: white;
+  }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+  }
+  .contact-section .section-label { color: var(--accent); }
+  .contact-section .section-label::before { background: var(--accent); }
+  .contact-section .section-title { color: white; }
+  .contact-text {
+    font-size: 0.9rem; color: rgba(255,255,255,0.65);
+    line-height: 1.8; margin-bottom: 32px;
+  }
+  .contact-links { display: flex; flex-direction: column; gap: 16px; }
+  .contact-link {
+    display: flex; align-items: center; gap: 14px;
+    text-decoration: none;
+    font-size: 0.85rem; color: rgba(255,255,255,0.75);
+    transition: color 0.2s;
+  }
+  .contact-link:hover { color: var(--accent); }
+  .contact-link-icon {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+  }
+  .contact-aside {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 36px;
+  }
+  .contact-aside h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 300; color: white;
+    margin-bottom: 20px;
+  }
+  .open-to-list { list-style: none; }
+  .open-to-list li {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 0.82rem; color: rgba(255,255,255,0.65);
+    padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .open-to-list li:last-child { border-bottom: none; }
+  .open-to-list li::before { content: '→'; color: var(--accent); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0d1e3d; color: rgba(255,255,255,0.3);
+    padding: 24px 80px;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 0.72rem; letter-spacing: 0.05em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-tag { animation: fadeUp 0.6s ease both; }
+  .hero h1 { animation: fadeUp 0.7s 0.1s ease both; }
+  .hero-sub { animation: fadeUp 0.7s 0.2s ease both; }
+  .hero-badges { animation: fadeUp 0.7s 0.3s ease both; }
+  .hero-cta { animation: fadeUp 0.7s 0.4s ease both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    section { padding: 60px 32px; }
+    .hero { padding: 100px 32px 60px; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    nav { padding: 0 24px; }
+    .nav-links { gap: 20px; }
+    footer { padding: 20px 32px; flex-direction: column; gap: 8px; text-align: center; }
+    .scroll-line { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-name">V. Ntavranoglou</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-tag">Legal AI Specialist · London, UK</div>
+  <h1>Vasiliki<br><em>Ntavranoglou</em></h1>
+  <p class="hero-sub">
+    Legal professional with 5+ years in litigation and contract law, now specialising in Legal AI implementation, prompt engineering, and AI governance. Bridging law and technology.
+  </p>
+  <div class="hero-badges">
+    <span class="badge gold">Clio AI Fundamentals 2026</span>
+    <span class="badge gold">Elements of AI · Helsinki</span>
+    <span class="badge">Harvey AI</span>
+    <span class="badge">LexisNexis AI</span>
+    <span class="badge">LLM · Essex · High Merit</span>
+    <span class="badge">5+ Yrs Legal Practice</span>
+  </div>
+  <div class="hero-cta">
+    <a href="#portfolio" class="btn btn-primary">View My Work</a>
+    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+  </div>
+  <div class="scroll-line">Scroll to explore</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">Who I Am</div>
+  <div class="section-title">Law Meets AI</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        I'm a UK-based legal professional transitioning into the <strong>Legal AI sector</strong>. With over 5 years of hands-on experience across insurance litigation, contract administration, and legal operations at firms including Keoghs LLP and Kennedys Law LLP, I bring something rare: <strong>deep legal domain knowledge combined with genuine AI fluency</strong>.
+      </p>
+      <p>
+        I've used <strong>Harvey AI, Clio AI, and LexisNexis AI</strong> in real legal workflows — not just in theory. I understand where these tools fail, where they add value, and what a practitioner actually needs from them. That's the perspective that Legal AI companies, law firms, and in-house legal teams are desperate to hire.
+      </p>
+      <p>
+        I hold an <strong>LLM in International Commercial & Business Law (High Merit)</strong> from the University of Essex, and I'm actively building expertise in AI governance, the EU AI Act, and Legal AI implementation.
+      </p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Years Legal Practice</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">AI Certifications</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">6+</div>
+        <div class="stat-label">Legal Tech Platforms</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">LLM</div>
+        <div class="stat-label">High Merit · Essex</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Capabilities</div>
+  <div class="section-title">What I Bring</div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">⚖️</div>
+      <h3>Legal Domain Expertise</h3>
+      <p>Insurance litigation, contract review & drafting, commercial disputes, motor claims, personal injury. Real-world caseload experience that AI tools alone cannot replicate.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🤖</div>
+      <h3>Legal AI Tools</h3>
+      <p>Hands-on use of Harvey AI, Clio AI, and LexisNexis AI. Able to evaluate AI output quality, identify errors, and optimise workflows for legal contexts.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">✍️</div>
+      <h3>Prompt Engineering</h3>
+      <p>Crafting precise prompts for legal research, contract analysis, and document drafting. Specialising in legal use-cases where precision and hallucination-detection are critical.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🏛️</div>
+      <h3>AI Governance & Compliance</h3>
+      <p>Working knowledge of GDPR, EU AI Act, and responsible AI frameworks. Bridging regulatory requirements with practical AI deployment in legal settings.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">⚙️</div>
+      <h3>Legal Operations</h3>
+      <p>Workflow automation, document management, disclosure exercises, case management systems (Visualfiles, Proclaim, Clio). Experience optimising high-volume legal processes.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🔬</div>
+      <h3>AI Output Evaluation</h3>
+      <p>Training and evaluating AI legal outputs through platforms like Outlier/Scale AI. Reviewing AI reasoning, spotting errors in case law, flagging misapplied legal standards.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-label">Credentials</div>
+  <div class="section-title">Certifications & Training</div>
+  <div class="certs-list">
+    <div class="cert-item">
+      <div class="cert-year">2026</div>
+      <div>
+        <div class="cert-name">Clio Legal AI Fundamentals</div>
+        <div class="cert-issuer">Clio — Legal Practice Management Platform</div>
+      </div>
+      <span class="cert-badge-new">AI · Legal</span>
+    </div>
+    <div class="cert-item">
+      <div class="cert-year">2025</div>
+      <div>
+        <div class="cert-name">Elements of AI</div>
+        <div class="cert-issuer">University of Helsinki & MinnaLearn</div>
+      </div>
+      <span class="cert-badge-new">AI · Foundations</span>
+    </div>
+    <div class="cert-item">
+      <div class="cert-year">2025</div>
+      <div>
+        <div class="cert-name">AI Fundamentals</div>
+        <div class="cert-issuer">Clio</div>
+      </div>
+      <span class="cert-badge-new">AI · Legal</span>
+    </div>
+    <div class="cert-item">
+      <div class="cert-year">In Progress</div>
+      <div>
+        <div class="cert-name">Google AI Essentials</div>
+        <div class="cert-issuer">Google — via Coursera</div>
+      </div>
+      <span class="cert-badge-new">Productivity AI</span>
+    </div>
+    <div class="cert-item">
+      <div class="cert-year">In Progress</div>
+      <div>
+        <div class="cert-name">Prompt Engineering for ChatGPT</div>
+        <div class="cert-issuer">Vanderbilt University — via Coursera</div>
+      </div>
+      <span class="cert-badge-new">Prompt Eng.</span>
+    </div>
+    <div class="cert-item">
+      <div class="cert-year">Existing</div>
+      <div>
+        <div class="cert-name">JustisOne Certificate of Proficiency</div>
+        <div class="cert-issuer">JustisOne Legal Research Platform</div>
+      </div>
+      <span class="cert-badge-new">Legal Research</span>
+    </div>
+    <div class="cert-item">
+      <div class="cert-year">Existing</div>
+      <div>
+        <div class="cert-name">Westlaw Basic Certification</div>
+        <div class="cert-issuer">Thomson Reuters Westlaw</div>
+      </div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-year">Existing</div>
+      <div>
+        <div class="cert-name">LexisNexis Basic Certification</div>
+        <div class="cert-issuer">LexisNexis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Background</div>
+  <div class="section-title">Legal Experience</div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">2022 – Present</div>
+      <div class="timeline-title">Legal AI Transition & Professional Development</div>
+      <div class="timeline-company">Self-directed · London</div>
+      <ul class="timeline-points">
+        <li>Completed <span class="ai-highlight">Clio Legal AI Fundamentals</span>, <span class="ai-highlight">Elements of AI (Helsinki)</span>, and AI Fundamentals</li>
+        <li>Hands-on testing of <span class="ai-highlight">Harvey AI</span>, <span class="ai-highlight">Clio AI</span>, and <span class="ai-highlight">LexisNexis AI</span> for contract review and legal research</li>
+        <li>Independent study in EU AI Act, GDPR, responsible AI, and legal technology trends</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2020 – 2022</div>
+      <div class="timeline-title">File Handling Assistant (Legal Assistant to Director)</div>
+      <div class="timeline-company">Keoghs LLP · London</div>
+      <ul class="timeline-points">
+        <li>Managed complex high-value commercial property and products liability caseload for multinational clients</li>
+        <li>Applied <span class="ai-highlight">LexisNexis AI</span> and <span class="ai-highlight">Clio AI</span> to streamline document analysis and case management</li>
+        <li>Negotiated settlements, coordinated disclosure, instructed Counsel and expert witnesses</li>
+        <li>Assisted with ADR including mediation in complex multi-party disputes</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2018 – 2020</div>
+      <div class="timeline-title">Litigation Assistant</div>
+      <div class="timeline-company">Kennedys Law LLP · Chelmsford</div>
+      <ul class="timeline-points">
+        <li>Managed motor insurance litigation caseload from instruction through to settlement or trial</li>
+        <li>Delivered strategic written advice on liability, quantum and risk exposure to insurer clients</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2017 – 2018</div>
+      <div class="timeline-title">Litigation Fee Earner</div>
+      <div class="timeline-company">Horwich Farrelly Solicitors · London</div>
+      <ul class="timeline-points">
+        <li>Independently managed high-volume credit hire litigation and pre-litigation caseload</li>
+        <li>Successfully challenged non-compliant credit hire agreements, reducing indemnity spend</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO / PROJECTS -->
+<section id="portfolio">
+  <div class="section-label">Work Samples</div>
+  <div class="section-title">Portfolio</div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-tag">Prompt Engineering · Contract Law</div>
+      <h3>AI Contract Clause Analyser — Prompt Study</h3>
+      <p>A structured comparison of how Harvey AI and LexisNexis AI respond to indemnity clause review prompts, with annotations on where each tool failed from a practitioner perspective. Demonstrates real-world prompt engineering for legal use-cases.</p>
+      <div class="project-tools">
+        <span class="tool-pill">Harvey AI</span>
+        <span class="tool-pill">LexisNexis AI</span>
+        <span class="tool-pill">Prompt Engineering</span>
+        <span class="tool-pill">Contract Law</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-tag">AI Governance · EU AI Act</div>
+      <h3>EU AI Act: Implications for UK Law Firms</h3>
+      <p>A practical analysis of how the EU AI Act's obligations apply to UK law firms and their clients. Written from the perspective of a legal practitioner who has actually used the tools the Act regulates.</p>
+      <div class="project-tools">
+        <span class="tool-pill">EU AI Act</span>
+        <span class="tool-pill">Compliance</span>
+        <span class="tool-pill">Legal Research</span>
+        <span class="tool-pill">AI Governance</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-tag">Legal Operations · AI Tools</div>
+      <h3>Insurance Litigation Workflow — AI Audit</h3>
+      <p>Based on my experience at Keoghs LLP, a mapped workflow showing where AI tools add value (and where they create risk) in a high-volume insurance litigation practice. Includes recommended tooling for each stage.</p>
+      <div class="project-tools">
+        <span class="tool-pill">Legal Operations</span>
+        <span class="tool-pill">Clio AI</span>
+        <span class="tool-pill">Workflow Design</span>
+        <span class="tool-pill">Insurance Law</span>
+      </div>
+    </div>
+    <div class="project-placeholder">
+      <div class="plus">+</div>
+      <p><strong>More projects coming</strong><br>AI trainer work samples, prompt libraries, and AI output evaluations to be added</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="contact-grid">
+    <div>
+      <div class="section-label">Get In Touch</div>
+      <div class="section-title">Open to Opportunities</div>
+      <p class="contact-text">
+        I'm actively looking for roles in Legal AI — whether that's AI training, implementation, legal operations, or governance. Remote-first. UK-based. Available now.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:vn.ntavranoglou@gmail.com" class="contact-link">
+          <div class="contact-link-icon">✉</div>
+          vn.ntavranoglou@gmail.com
+        </a>
+        <a href="https://linkedin.com/in/vnntavranoglou" class="contact-link" target="_blank">
+          <div class="contact-link-icon">in</div>
+          linkedin.com/in/vnntavranoglou
+        </a>
+        <a href="tel:07506056037" class="contact-link">
+          <div class="contact-link-icon">☎</div>
+          07506 056 037
+        </a>
+      </div>
+    </div>
+    <div class="contact-aside">
+      <h3>I'm open to:</h3>
+      <ul class="open-to-list">
+        <li>Legal AI Trainer / Evaluator (remote, freelance)</li>
+        <li>Legal Operations Specialist (AI-focused)</li>
+        <li>Legal Prompt Engineer</li>
+        <li>AI Implementation Consultant (law firms)</li>
+        <li>AI Governance & Compliance Analyst</li>
+        <li>Legal Success Manager (Legal Tech SaaS)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Vasiliki Ntavranoglou</span>
+  <span>Legal AI Specialist · London, UK</span>
+</footer>
+
+</body>
+</html>
