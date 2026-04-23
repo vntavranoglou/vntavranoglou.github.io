@@ -4,55 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Governance Risk Assessment | V. Noela Ntavranoglou</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Outfit', sans-serif; line-height: 1.6; color: #1a1a2e; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #FDFCFA; }
-        h1, h2 { font-family: 'Cormorant Garamond', serif; color: #1B3A6B; }
-        h1 { border-bottom: 1px solid #D8E4F2; padding-bottom: 10px; }
-        .section { margin-bottom: 30px; }
-        ul { margin-bottom: 20px; }
-        li { margin-bottom: 8px; }
+        :root {
+            --navy: #1B3A6B;
+            --blue: #2E5FA3;
+            --warm-white: #FDFCFA;
+            --ink: #1a1a2e;
+            --mid: #4a5568;
+            --accent: #C9A96E;
+            --border: #D8E4F2;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--warm-white);
+            color: var(--ink);
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        /* Navigation Link Styling */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--blue);
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+            transition: transform 0.2s;
+        }
+        .back-link:hover {
+            transform: translateX(-4px);
+        }
+
+        h1, h2 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--navy);
+            font-weight: 400;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 3rem);
+            line-height: 1.1;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            color: var(--mid);
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            body { padding: 40px 20px; }
+            h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
+
+    <a href="/" class="back-link">← Back to Portfolio</a>
+
     <h1>AI Governance Risk Assessment — ChatGPT Use in Companies</h1>
     
-    <div class="section">
+    <section>
         <h2>1. Overview</h2>
-        <p>Many companies are starting to use AI tools like ChatGPT to improve efficiency. However, the use of AI introduces legal, operational, and reputational risks that must be managed.</p>
-    </div>
+        <p>Many companies are starting to use AI tools like ChatGPT to improve efficiency. However, the use of AI introduces legal, operational, and reputational risks that must be managed to maintain professional standards and regulatory compliance.</p>
+    </section>
 
-    <div class="section">
-        <h2>2. Risks</h2>
+    <section>
+        <h2>2. Key Risks</h2>
         <ul>
-            <li><strong>Hallucinations:</strong> AI may generate incorrect or misleading information.</li>
-            <li><strong>Data leakage:</strong> Employees may input confidential company data into AI tools.</li>
-            <li><strong>Lack of accountability:</strong> It may be unclear who is responsible for AI-generated outputs.</li>
+            <li><strong>Hallucinations:</strong> AI may generate incorrect or misleading information that looks highly plausible, requiring expert verification.</li>
+            <li><strong>Data Leakage:</strong> Risk of employees inputting confidential company data or trade secrets into public AI models, potentially compromising intellectual property.</li>
+            <li><strong>Accountability:</strong> Complexities in determining responsibility for AI-generated outputs in a legal or commercial context.</li>
         </ul>
-    </div>
+    </section>
 
-    <div class="section">
-        <h2>3. Legal Risks</h2>
+    <section>
+        <h2>3. Legal & Regulatory Considerations</h2>
         <ul>
-            <li>Data protection breaches (GDPR)</li>
-            <li>Incorrect legal advice</li>
-            <li>Intellectual property issues</li>
+            <li><strong>Data Protection:</strong> Risks of GDPR breaches if personal data is processed via third-party LLMs without adequate safeguards.</li>
+            <li><strong>Intellectual Property:</strong> Uncertainties regarding the ownership of AI-generated content and potential infringement of existing copyrights.</li>
+            <li><strong>Professional Negligence:</strong> The danger of relying on AI-generated legal citations or advice without human-in-the-loop oversight.</li>
         </ul>
-    </div>
+    </section>
 
-    <div class="section">
-        <h2>4. Mitigation Measures</h2>
+    <section>
+        <h2>4. Recommended Mitigation Measures</h2>
         <ul>
-            <li>Require human review of all AI outputs</li>
-            <li>Prohibit input of confidential data</li>
-            <li>Train employees on AI risks</li>
-            <li>Implement internal AI usage policies</li>
+            <li><strong>Human-in-the-loop:</strong> Mandating a senior human review of all AI-generated work product before it is finalized.</li>
+            <li><strong>Input Policies:</strong> Implementing strict "no-confidential-data" rules for public AI tools.</li>
+            <li><strong>Staff Training:</strong> Specialized training on prompt engineering and hallucination detection.</li>
+            <li><strong>Internal Governance:</strong> Developing a clear AI Usage Policy (AUP) tailored to the specific firm’s risk profile.</li>
         </ul>
-    </div>
+    </section>
 
-    <div class="section">
+    <section>
         <h2>5. Conclusion</h2>
-        <p>AI tools like ChatGPT can be valuable, but companies must implement governance measures to manage associated risks.</p>
-    </div>
+        <p>AI tools like ChatGPT offer significant advantages for legal operations, but they are not a replacement for professional judgment. A robust governance framework is essential to leverage these tools safely and effectively.</p>
+    </section>
+
 </body>
 </html>
