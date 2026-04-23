@@ -317,10 +317,12 @@
     gap: 24px;
   }
   .project-card {
-    background: var(--warm-white);
+    background: #ffffff;
     border: 1px solid var(--border);
     border-radius: 8px; padding: 32px;
     transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
   }
   .project-card:hover { border-color: var(--blue); box-shadow: 0 4px 20px rgba(27,58,107,0.08); }
   .project-tag {
@@ -331,18 +333,27 @@
   }
   .project-card h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem; font-weight: 400;
+    font-size: 1.4rem; font-weight: 400;
     color: var(--navy); margin-bottom: 10px;
   }
   .project-card p {
-    font-size: 0.82rem; color: var(--mid); line-height: 1.7;
+    font-size: 0.88rem; color: var(--mid); line-height: 1.8;
     margin-bottom: 16px;
   }
-  .project-tools { display: flex; flex-wrap: wrap; gap: 6px; }
+  .project-tools { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
   .tool-pill {
     font-size: 0.68rem; font-weight: 500; letter-spacing: 0.05em;
     padding: 3px 10px; border-radius: 100px;
     background: var(--light-blue); color: var(--navy);
+  }
+  .project-link {
+    font-size: 0.82rem;
+    color: var(--blue);
+    font-weight: 600;
+    text-decoration: underline; 
+    margin-top: auto;           
+    padding-top: 16px;
+    display: inline-block;
   }
   .project-placeholder {
     background: linear-gradient(135deg, var(--light-blue) 0%, #e8f0fb 100%);
@@ -717,7 +728,7 @@
     <span class="tool-pill">Legal Tech</span>
   </div>
   <div style="margin-top: 16px;">
-    <a href="https://vntavranoglou.github.io/ai-risk-assessment-chatgpt" target="_blank" style="color: var(--blue); text-decoration: none; font-size: 0.82rem;">
+    <a href="https://vntavranoglou.github.io/ai-risk-assessment-chatgpt" class="project-link" target="_blank" style="color: var(--blue); text-decoration: none; font-size: 0.82rem;">
       <strong>View Project</strong>
     </a>
   </div>
