@@ -1,0 +1,92 @@
+[
+  {
+    "category": "rta",
+    "phase": "Liability",
+    "task": "Roundabout Dispute",
+    "prompt": "Act as an RTA Liability Specialist. Based on the attached [Police Report] and [Photos], determine liability for a collision on a multi-lane roundabout. Constraint: Apply the principles from Grace v Tanner [2003] regarding lane discipline. Task: Draft a liability denial letter if the Claimant changed lanes without signaling."
+  },
+  {
+    "category": "rta",
+    "phase": "Liability",
+    "task": "Low Velocity Impact (LVI)",
+    "prompt": "Review the [Engineer’s Report] for the Defendant’s vehicle. The report shows minimal bumper scuffing. Task: Draft a letter to the Claimant’s solicitors asserting an LVI defense. Argument: State that the impact was insufficient to cause the 'whiplash' injuries alleged, citing the lack of structural damage and the 'occupant displacement' theory."
+  },
+  {
+    "category": "rta",
+    "phase": "Quantum",
+    "task": "JC Guidelines (Whiplash)",
+    "prompt": "Apply the Official Injury Claims (OIC) Portal tariff to the uploaded [Medical Report]. Context: The Claimant suffered a soft tissue neck injury for [X] months with minor psychological upset. Task: Calculate the exact tariff amount and any potential 'uplift' for exceptional circumstances under the Whiplash Reform Programme."
+  },
+  {
+    "category": "rta",
+    "phase": "Special Damages",
+    "task": "Credit Hire Necessity",
+    "prompt": "Review the Claimant's 'Credit Hire' claim for a replacement vehicle. Task: Draft a 'Request for Information' regarding impecuniosity. Ask: Request 3 months of bank statements and evidence that the Claimant could not have afforded to hire a car at 'Basic Hire Rates' (BHR) from a standard provider."
+  },
+  {
+    "category": "rta",
+    "phase": "Special Damages",
+    "task": "BHR Evidence Analysis",
+    "prompt": "I have uploaded [BHR Evidence] from three mainstream hire companies. Task: Calculate the 'spot rate' average for a [Vehicle Category, e.g., Ford Focus] in the [Postcode Area] for a [Duration] period. Compare this to the 'Credit Hire' rate of £[Amount] and identify the 'excess' amount to be struck out."
+  },
+  {
+    "category": "rta",
+    "phase": "Litigation",
+    "task": "Drafting the Defence",
+    "prompt": "Draft a Defence for an RTA claim. Case: A rear-end shunt where the Defendant alleges the Claimant reversed into them. Constraint: Plead Contributory Negligence in the alternative. Format: Follow CPR Part 16 style, specifically addressing the 'Particulars of Negligence'."
+  },
+  {
+    "category": "rta",
+    "phase": "Evidence",
+    "task": "Witness Statement (Dashcam)",
+    "prompt": "Review the [Dashcam Footage Transcript]. Draft a Witness Statement for the Defendant. Focus: The footage shows the Claimant pulled out from a side road (junction) when it was 'unsafe to do so'. Rule: Structure in numbered paragraphs per CPR PD 32, including the 'Statement of Truth'."
+  },
+  {
+    "category": "rta",
+    "phase": "Costs",
+    "task": "Fixed Recoverable Costs (FRC)",
+    "prompt": "The case has exited the Portal and is now in the Fast Track. Calculate the Fixed Recoverable Costs under CPR Part 45 for a case that settles 'post-issue but pre-trial' for £[Settlement Amount]."
+  },
+  {
+    "category": "commercial",
+    "phase": "Coverage",
+    "task": "Claims-Made vs Occurrence",
+    "prompt": "Analyze the [Policy Wording]. The loss occurred in 2022, but the claim was made in 2024. Task: Determine if the 'Claims-Made' trigger is met. Check: Is there a 'Retroactive Date' or an 'Extended Reporting Period' that applies? Cite the impact of the 'Known Circumstances' exclusion."
+  },
+  {
+    "category": "commercial",
+    "phase": "Product Liability",
+    "task": "CPA 1987 'Defect' Analysis",
+    "prompt": "Act as a Product Liability KC. Apply Section 3 of the Consumer Protection Act 1987 to the uploaded [Technical Specification] of the [Product]. Task: Determine if the 'safety of the product' was below what 'persons generally are entitled to expect'. Consider: Warnings, instructions for use, and the state of scientific knowledge at the time of supply."
+  },
+  {
+    "category": "commercial",
+    "phase": "Commercial Claims",
+    "task": "Business Interruption (BI)",
+    "prompt": "Analyze the [Financial Accounts] for a multi-million pound BI claim. Context: The factory was closed for 6 months. Task: Calculate the 'Gross Profit' loss. Formula: (Standard Turnover - Actual Turnover) x Rate of Gross Profit. Constraint: Adjust for 'Trends and Other Circumstances' (e.g., the general market downturn)."
+  },
+  {
+    "category": "commercial",
+    "phase": "Product Liability",
+    "task": "Development Risk Defence",
+    "prompt": "Draft a section of the Defence asserting the 'Development Risk Defence' under s.4(1)(e) CPA 1987. Argument: The state of scientific and technical knowledge at the time the [Product] was circulated was not such that a producer might be expected to have discovered the defect."
+  },
+  {
+    "category": "commercial",
+    "phase": "Commercial Claims",
+    "task": "Aggregation of Multi-Party Claims",
+    "prompt": "Review the [Liability Policy] regarding 'Aggregation'. 500 claimants are suing for 'Water Contamination'. Task: Determine if this constitutes 'one originating cause' (one £5m limit) or 500 separate 'events' (500 x £5m limits). Cite AIG v MMMC [2017]."
+  },
+  {
+    "category": "commercial",
+    "phase": "Litigation",
+    "task": "Pure Economic Loss Defence",
+    "prompt": "Draft a Strike-Out application for a 'Commercial Liability' claim. Basis: The Claimant is suing for 'Loss of Potential Contracts' due to a power outage caused by the Defendant. Argument: This is 'Pure Economic Loss' and is not recoverable in Tort, citing Spartan Steel v Martin."
+  },
+  {
+    "category": "commercial",
+    "phase": "Settlement",
+    "task": "High-Value PPO Calculation",
+    "prompt": "Calculate a Periodical Payment Order (PPO) for a claimant with 'Permanent Total Disability'. Variable: Annual care cost £200,000. Task: Index-link the payments to the ASHE 6115 (Care workers' earnings) rather than standard RPI. Explain why ASHE is more appropriate here."
+  }
+]
