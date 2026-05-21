@@ -48,6 +48,139 @@
     "prompt": "The case has exited the Portal and is now in the Fast Track. Calculate the Fixed Recoverable Costs under CPR Part 45 for a case that settles 'post-issue but pre-trial' for £[Settlement Amount]."
   },
   {
+    "category": "rta",
+    "phase": "Liability",
+    "task": "Contributory Negligence (Seatbelt)",
+    "prompt": "Analyze the [Medical Report] and [A&E Notes] for seatbelt non-compliance. Task: Apply the reduction formula from Froom v Butcher [1976]. Calculate whether a 15% or 25% reduction in general damages applies based on whether the injury would have been prevented or lessened by wearing the seatbelt."
+  },
+  {
+    "category": "rta",
+    "phase": "Liability",
+    "task": "Pedestrian Crossing Dispute",
+    "prompt": "Review the [Witness Statements] regarding a collision with a pedestrian on an un-signaled crossing. Task: Evaluate liability distributions under the updated Highway Code Hierarchy of Road Users. Draft an assessment evaluating the driver’s duty of care versus the pedestrian's sudden step into the carriageway."
+  },
+  {
+    "category": "rta",
+    "phase": "Quantum",
+    "task": "Non-Tariff Injury Assessment",
+    "prompt": "Review the [Medical Report] containing mixed injuries: a tariff whiplash injury and a non-tariff wrist fracture. Task: Apply the guidance from Hassam v Rabot [2024]. Ensure the assessment avoids double recovery while properly valuing the distinct non-tariff psychological and physical impairment elements."
+  },
+  {
+    "category": "rta",
+    "phase": "Special Damages",
+    "task": "Loss of Earnings Analysis",
+    "prompt": "Examine the [Self-Assessment Tax Returns (SA302)] and [Profit & Loss Accounts] for a self-employed courier. Task: Identify patterns of seasonal earnings and calculate the net weekly loss over a [X] week period. Draft a cross-examination schedule targeted at unvouched cash income claims."
+  },
+  {
+    "category": "rta",
+    "phase": "Special Damages",
+    "task": "Physiotherapy Cost Audit",
+    "prompt": "Audit the [Medical Invoices] for private rehabilitation. Task: Evaluate whether the number of sessions exceeds standard MedCo guidelines for a soft-tissue injury. Draft an objection asserting a failure to mitigate loss if the treatment rates exceed regional NHS or standard private market averages."
+  },
+  {
+    "category": "rta",
+    "phase": "Evidence",
+    "task": "Part 35 Expert Interrogatories",
+    "prompt": "Review the joint [Orthopaedic Expert Report]. Task: Draft a set of precise Part 35 clarification questions for the expert. Focus: Challenge the expert's conclusion on the multi-year prognosis period by contrasting it with pre-existing degenerative changes noted in the baseline X-rays."
+  },
+  {
+    "category": "rta",
+    "phase": "Litigation",
+    "task": "Part 36 Settlement Strategy",
+    "prompt": "Review the Claimant’s Part 36 offer of £[Amount]. Task: Perform a tactical risk analysis based on current litigation exposure. Draft a counter-offer recommendation explaining the cost consequences under CPR Part 36 if the Defendant fails to beat the offer at trial."
+  },
+  {
+    "category": "rta",
+    "phase": "Costs",
+    "task": "Stage 3 Portal Dispute",
+    "prompt": "The parties have reached a deadlock on quantum within the MoJ Portal. Task: Draft the Stage 3 court pack documents (Form Euro Protocol). Ensure all relevant medical evidence, interim payment records, and final schedule of losses are indexed correctly under Portal rules."
+  },
+  {
+    "category": "rta",
+    "phase": "Liability",
+    "task": "Emergency Vehicle Collision",
+    "prompt": "Analyze an accident where a police vehicle traveling on blue lights collided with the Defendant at a junction. Task: Draft an opinion assessing liability based on whether the emergency driver took adequate precautions when entering the junction against a red signal light."
+  },
+  {
+    "category": "rta",
+    "phase": "Liability",
+    "task": "Sudden Medical Incapacity",
+    "prompt": "The Defendant claims they suffered a sudden stroke while driving, causing the collision. Task: Evaluate the legal threshold for an automatism defense. Outline the specific medical records and historical GP files required to prove there was no prior medical forewarning."
+  },
+  {
+    "category": "rta",
+    "phase": "Quantum",
+    "task": "Scarring & Disfigurement Valuation",
+    "prompt": "Examine the high-resolution [Medical Photographs] of facial scarring on a young claimant. Task: Cross-reference the Judicial College Guidelines (Chapter 7) for facial disfigurement. Determine the correct bracket based on psychological impact, visibility, and cosmetic concealment options."
+  },
+  {
+    "category": "rta",
+    "phase": "Special Damages",
+    "task": "Storage and Recovery Fees",
+    "prompt": "Review an invoice for vehicle storage totaling £[Amount] at a daily rate of £[Rate]. Task: Identify whether the vehicle was moved to an un-approved compound without justification. Draft a counter-argument challenging the storage duration as an unreasonable failure to mitigate loss."
+  },
+  {
+    "category": "rta",
+    "phase": "Special Damages",
+    "task": "Diminution in Value Claim",
+    "prompt": "Review the [Assessor’s Valuation Report] claiming 20% diminution in value for a high-end sports car following structural repairs. Task: Draft an advice analyzing whether the evidence satisfies the strict test for residual diminution in the UK retail market post-repair."
+  },
+  {
+    "category": "rta",
+    "phase": "Evidence",
+    "task": "CCTV Footpath Extraction Strategy",
+    "prompt": "The accident occurred outside a commercial premises with private security cameras. Task: Draft a formal third-party disclosure application under CPR 31.17 to compel the store owner to release the raw video footage covering the 30-minute window surrounding the incident."
+  },
+  {
+    "category": "rta",
+    "phase": "Litigation",
+    "task": "Summary Judgment Application",
+    "prompt": "The Defendant hit a stationary vehicle parked legally on the side of a clear road. Task: Draft an application for Summary Judgment under CPR Part 24 on the grounds that the Defendant has no real prospect of successfully defending the liability element of the claim."
+  },
+  {
+    "category": "rta",
+    "phase": "Costs",
+    "task": "Exiting Fixed Costs (Complexity)",
+    "prompt": "A complex multi-vehicle RTA involving technical mechanical evidence is currently allocated to the Fast Track. Task: Draft a submission under CPR 45 requesting re-allocation to the Multi-Track or an exceptional uplift based on the high volume of expert disciplines involved."
+  },
+  {
+    "category": "rta",
+    "phase": "Liability",
+    "task": "Debris on Carriageway Impact",
+    "prompt": "A vehicle struck cargo that fell from an unidentified commercial lorry on the motorway. Task: Outline the procedural steps required to submit a claim to the Motor Insurers' Bureau (MIB) under the Untraced Drivers' Agreement. Detail the evidence thresholds for proving negligence."
+  },
+  {
+    "category": "rta",
+    "phase": "Liability",
+    "task": "Contributory Negligence (Intoxication)",
+    "prompt": "The Claimant accepted a lift from a driver they knew had been drinking heavily all evening. Task: Apply Owens v Brimmell [1977]. Draft a skeleton argument asserting a minimum 20% reduction in damages due to voluntary assumption of risk and contributory negligence."
+  },
+  {
+    "category": "rta",
+    "phase": "Quantum",
+    "task": "Chronic Pain Syndrome Valuation",
+    "prompt": "Review the conflicting [Psychiatric Expert Reports] regarding a minor physical soft-tissue injury that developed into Fibromyalgia. Task: Build an assessment framework using the Judicial College Guidelines for Chronic Pain. Analyze the evidentiary weight of historical records vs surveillance logs."
+  },
+  {
+    "category": "rta",
+    "phase": "Special Damages",
+    "task": "Care and Assistance (Gratuitous)",
+    "prompt": "The Claimant’s family provided 4 hours of daily household support for 6 months. Task: Calculate the value of this care using local commercial agency rates, applying the standard 25% discount for the gratuitous, non-taxable nature of care provided by family members."
+  },
+  {
+    "category": "rta",
+    "phase": "Evidence",
+    "task": "Locus In Quo Site Inspection",
+    "prompt": "A complex junction collision requires a visual site inspection report. Task: Draft instructions to an enquiry agent outlining specific items to document: line-of-sight obstructions, traffic light phasing cycles, road marking wear, and average approach speed measurements."
+  },
+  {
+    "category": "rta",
+    "phase": "Litigation",
+    "task": "Infant Settlement Approval",
+    "prompt": "An RTA settlement of £[Amount] has been agreed for an 8-year-old child. Task: Draft the Advice on Quantum required for the Stage 3 Infant Approval Hearing under CPR Part 21. Ensure it confirms the settlement is fair, reasonable, and covers all potential future developments."
+  }
+  ,
+  {
     "category": "commercial",
     "phase": "Coverage",
     "task": "Claims-Made vs Occurrence",
@@ -88,5 +221,143 @@
     "phase": "Settlement",
     "task": "High-Value PPO Calculation",
     "prompt": "Calculate a Periodical Payment Order (PPO) for a claimant with 'Permanent Total Disability'. Variable: Annual care cost £200,000. Task: Index-link the payments to the ASHE 6115 (Care workers' earnings) rather than standard RPI. Explain why ASHE is more appropriate here."
+  },
+  {
+    "category": "commercial",
+    "phase": "Coverage",
+    "task": "Late Notification Breach",
+    "prompt": "The insured notified the broker 14 months after becoming aware of a high-value toxic waste leak. Task: Analyze the policy condition precedent regarding immediate notification. Evaluate whether the insurer can repudiate liability completely or must prove financial prejudice under the Insurance Act 2015."
+  },
+  {
+    "category": "commercial",
+    "phase": "Coverage",
+    "task": "Material Misrepresentation",
+    "prompt": "Examine the [Proposal Form] and [Pre-Inception Email Disclosures]. Task: Apply Section 3 of the Insurance Act 2015 regarding a 'fair presentation of risk'. Determine if the omission of a prior commercial insolvency gives the insurer the right to apply proportionate remedies or avoid the policy entirely."
+  },
+  {
+    "category": "commercial",
+    "phase": "Product Liability",
+    "task": "Contractual Indemnity Trigger",
+    "prompt": "Review the uploaded [Supply Chain Contract] between the manufacturer and the global distributor. Task: Interpret the indemnity clause regarding third-party personal injury. Analyze whether the clause triggers a full hold-harmless obligation including the distributor's legal costs before a judicial finding of negligence."
+  },
+  {
+    "category": "commercial",
+    "phase": "Product Liability",
+    "task": "Recall Expenses Assessment",
+    "prompt": "The insured initiated a global recall of an industrial valve model due to a structural stress failure. Task: Audit the [Recall Action Expense Log]. Determine which expenditures (e.g., transport, replacement hardware, public notifications) are covered under the standard 'Product Recall Extension' endorsement."
+  },
+  {
+    "category": "commercial",
+    "phase": "Commercial Claims",
+    "task": "Property Damage: Proximate Cause",
+    "prompt": "A commercial property suffered damage following a storm that caused local riverbanks to burst. The policy excludes flood water damage but includes storm wind damage. Task: Apply Leyland Shipping principles to determine the 'proximate cause' of the structural collapse. Draft an advisory note on coverage distribution."
+  },
+  {
+    "category": "commercial",
+    "phase": "Commercial Claims",
+    "task": "Subrogation Action Strategy",
+    "prompt": "The commercial property insurer paid out £2.4m for a fire caused by a faulty HVAC electrical installation. Task: Draft a subrogation recovery letter addressed to the subcontractor's liability insurers. Focus: Rely on the specialist forensic engineer's report to establish structural causation."
+  },
+  {
+    "category": "commercial",
+    "phase": "Litigation",
+    "task": "Jurisdiction & Choice of Law",
+    "prompt": "A commercial insurance coverage dispute involves a policy issued in London to a parent company registered in Delaware, concerning a loss that occurred at a manufacturing facility in Germany. Task: Analyze the 'Jurisdiction and Choice of Law' clauses to determine the correct forum for filing a claim."
+  },
+  {
+    "category": "commercial",
+    "phase": "Litigation",
+    "task": "Commercial Pre-Action Protocol",
+    "prompt": "Draft a detailed Letter of Claim under the Pre-Action Protocol for Commercial Claims. Context: A commercial insurer is pursuing a recovery action against a negligent construction partner. Ensure the letter breaks down complex engineering defects, liability metrics, and quantifying losses clearly."
+  },
+  {
+    "category": "commercial",
+    "phase": "Settlement",
+    "task": "Multi-Layer Excess Layer Drop-Down",
+    "prompt": "The primary commercial general liability policy layer (£5m) is exhausted by a massive explosion claim. Task: Analyze the [Excess Layer Policy Wording] for the first and second layer excess policies (£5m xs £5m, and £10m xs £10m) to check the specific 'drop-down' mechanics and defense cost inclusion rules."
+  },
+  {
+    "category": "commercial",
+    "phase": "Settlement",
+    "task": "Scott Schedule Construction",
+    "prompt": "Draft a comprehensive Scott Schedule for a complex multi-item property damage dispute involving structural defects across an industrial park. Structure the layout with columns for: Item Number, Plaintiff Claim, Contract Reference, Defendant Response, and Quantum Variances."
+  },
+  {
+    "category": "commercial",
+    "phase": "Coverage",
+    "task": "Fraudulent Devices Rule",
+    "prompt": "The commercial policyholder submitted an authentic fire damage claim but deployed a fabricated invoice to support the value of lost office technology. Task: Apply the rule from Versloot Dredging [2016]. Determine whether the fraudulent device forfeits the entire claim or just the affected element."
+  },
+  {
+    "category": "commercial",
+    "phase": "Coverage",
+    "task": "Insolvency & Third Party Rights",
+    "prompt": "A commercial builder went into administration before completing repairs on a defective warehouse roof. Task: Apply the Third Parties (Rights against Insurers) Act 2010. Draft a procedural guide mapping out how the building owner can sue the insolvent builder’s liability insurer directly."
+  },
+  {
+    "category": "commercial",
+    "phase": "Product Liability",
+    "task": "Medical Device Batch Clause",
+    "prompt": "150 patients suffered premature wear from a specific batch of orthopedic hip implants. Task: Review the policy's 'Batch Clause'. Determine if the total claims aggregate into a single deductible and single limit of indemnity, or if each implant constitutes a separate deductible event."
+  },
+  {
+    "category": "commercial",
+    "phase": "Product Liability",
+    "task": "Design Defect vs Manufacturing Defect",
+    "prompt": "Analyze a product liability file involving a consumer drone battery fire. Task: Distinguish between a localized manufacturing anomaly and an inherent design defect across the entire product line. Draft an advice detailing the strategic exposure differences under the Consumer Protection Act."
+  },
+  {
+    "category": "commercial",
+    "phase": "Commercial Claims",
+    "task": "Denial of Access Clause",
+    "prompt": "Following a terrorist incident, police sealed off a commercial district for 14 days, preventing access to a flagship retail store. Task: Analyze the Business Interruption policy wording for the 'Denial of Access' extension. Evaluate whether physical damage to the store is a prerequisite to coverage."
+  },
+  {
+    "category": "commercial",
+    "phase": "Commercial Claims",
+    "task": "Suing/Laboring Clause Assessment",
+    "prompt": "An industrial facility spent £450,000 on temporary barriers to protect warehouse stock from an imminent rising flood. Task: Evaluate whether these emergency mitigation expenses are recoverable under the policy’s 'Sue and Labour' clause, even if the actual flood never breached the barrier."
+  },
+  {
+    "category": "commercial",
+    "phase": "Litigation",
+    "task": "Specific Disclosure Application",
+    "prompt": "The Defendant insurer suspects arson but lacks explicit proof. Task: Draft an application for Specific Disclosure under CPR Part 31 requesting the commercial claimant’s internal WhatsApp logs, personal cell phone text transcripts, and private bookkeeping data surrounding the week of the incident."
+  },
+  {
+    "category": "commercial",
+    "phase": "Litigation",
+    "task": "Security for Costs Request",
+    "prompt": "The claimant company is an offshore holding entity with no assets located inside the UK jurisdiction. Task: Draft a formal letter requesting Security for Costs under CPR 25.12. State that the Defendant will apply for a stay of proceedings if cash security is not deposited into the court account."
+  },
+  {
+    "category": "commercial",
+    "phase": "Settlement",
+    "task": "Global Release Deed Drafting",
+    "prompt": "Draft a multi-jurisdictional Settlement Agreement and Release Deed for a commercial product liability dispute between a UK insurer and a supplier based in Taiwan. Ensure it covers all future unknown claims, contribution protections, and includes a strict non-admission of liability clause."
+  },
+  {
+    "category": "commercial",
+    "phase": "Settlement",
+    "task": "Betterment Deduction Calculation",
+    "prompt": "A warehouse roof was replaced following a storm. The original roof was 15 years old, and the new structure has a 30-year lifespan. Task: Calculate the equitable 'betterment deduction' to subtract from the final payout, referencing standard insurance practice for windfall avoidance."
+  },
+  {
+    "category": "commercial",
+    "phase": "Coverage",
+    "task": "Co-Insurance Interest Dispute",
+    "prompt": "A commercial landlord and a commercial tenant are both named as co-insureds on a property policy. The tenant's employee negligently caused a fire. Task: Analyze whether the insurer can bring a subrogated recovery claim against the tenant, applying the principles from Mark Rowlands v Berni Inns."
+  },
+  {
+    "category": "commercial",
+    "phase": "Product Liability",
+    "task": "Aircraft Component Exclusion",
+    "prompt": "A valve manufactured for general industrial use was mistakenly fitted into an aircraft fuel management line, resulting in an emergency landing. Task: Analyze the liability policy's 'Aviation Products Exclusion' clause to determine if coverage is entirely barred for non-aviation intended parts."
+  },
+  {
+    "category": "commercial",
+    "phase": "Commercial Claims",
+    "task": "Stock Throughput Valuation Dispute",
+    "prompt": "A logistics warehouse flooded, destroying 10,000 pallets of imported electronics. Task: Analyze the policy's 'Basis of Valuation' clause. Determine whether the loss should be calculated at the original wholesale cost of manufacture, the current landed replacement cost, or the projected retail selling value."
   }
 ]
