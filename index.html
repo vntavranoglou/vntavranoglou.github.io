@@ -79,29 +79,59 @@
     pointer-events: none;
   }
   
-  /* Executive Headshot Layout Accent */
+  /* Perfectly Proportioned Executive Row Layout */
   .hero-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    max-width: 900px;
+    flex-direction: row; 
+    align-items: center; /* Vertically centers your name block against the photo */
+    gap: 48px;           /* Clean, generous breathing room between photo and text */
+    max-width: 1200px;
+    margin-bottom: 40px;
   }
   .hero-portrait {
-    width: 160px;  
-    height: 160px;
-    border-radius: 6px; /* Crisp square with premium subtle softening */
+    width: 320px;        /* Increased width to be prominently commanding */
+    height: 380px;       /* Tall executive frame to beautifully match the name block */
     object-fit: cover;
-    border: 1px solid rgba(201,169,110,0.3); /* Subtle muted gold frame border */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     flex-shrink: 0;
-    background-color: #eaeaea;
+    background-color: transparent;
+    
+    /* Luxury edge fade: makes the portrait dissolve seamlessly into the deep navy background */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%),
+                        linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 12%, rgba(0,0,0,1) 88%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%),
+                linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 12%, rgba(0,0,0,1) 88%, rgba(0,0,0,0) 100%);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
   }
+  
+  /* Aligning typography inside the container */
+  .hero-text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5.5vw, 5rem); /* Beautifully scaled to sit elegantly next to the photo */
+    font-weight: 300; line-height: 1.1;
+    color: var(--blue); letter-spacing: -0.01em;
+    margin-bottom: 16px;
+    margin-top: 0;
+  }
+  .hero h1 em {
+    font-style: italic; color: var(--accent);
+  }
+
   @media (max-width: 768px) {
     .hero-container {
-        flex-direction: column-reverse;
-        align-items: flex-start;
+        flex-direction: column; /* Transitions beautifully to a clean vertical stack on tablets/phones */
+        align-items: center;
+        text-align: center;
         gap: 24px;
+    }
+    .hero-portrait {
+        width: 240px;
+        height: 290px;
     }
   }
 
@@ -116,19 +146,9 @@
     content: ''; display: block;
     width: 40px; height: 1px; background: var(--accent);
   }
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    font-weight: 300; line-height: 1.05;
-    color: var(--blue); letter-spacing: -0.01em;
-    margin-bottom: 12px;
-  }
-  .hero h1 em {
-    font-style: italic; color: var(--accent);
-  }
   .hero-sub {
     font-size: 1rem; font-weight: 300; color: var(--navy);
-    max-width: 520px; margin-bottom: 48px; line-height: 1.7;
+    max-width: 520px; margin-bottom: 0; line-height: 1.7;
   }
   .hero-badges {
     display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 48px;
@@ -498,13 +518,16 @@
   <div class="hero-tag">Legal AI Specialist · London, UK · Vasiliki Noela Ntavranoglou</div>
   
   <div class="hero-container">
-    <div>
+    <!-- Large Portrait anchoring the left side -->
+    <img src="profile.jpg" alt="Vasiliki Noela Ntavranoglou" class="hero-portrait" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=320&auto=format&fit=crop'">
+    
+    <!-- Symmetrical Executive Bio block on the right side -->
+    <div class="hero-text-block">
       <h1>Vasiliki Noela<br><em>Ntavranoglou</em></h1>
       <p class="hero-sub">
         Legal professional with 5+ years in litigation and contract law, now specialising in Legal AI implementation, prompt engineering, and AI governance. Bridging law and technology.
       </p>
     </div>
-    <img src="profile.jpg" alt="Vasiliki Noela Ntavranoglou" class="hero-portrait" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop'">
   </div>
 
   <div class="hero-badges">
