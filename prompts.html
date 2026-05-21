@@ -1,167 +1,380 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Legal Engineering Portfolio | Insurance Law Prompts</title>
+    <title>SRA-Compliant Prompt Engineering Frameworks | Vasiliki Noela Ntavranoglou</title>
     <style>
         /* Modern Portfolio Styling Accents */
         :root {
-            --primary-color: #1a2a3a; /* Deep Legal Navy Blue */
-            --accent-color: #d4af37;  /* Professional Gold/Brass tint */
-            --bg-light: #f8f9fa;
-            --border-color: #e2e8f0;
+            --primary-color: #1b3a6b; /* Deep UK Legal Navy Blue */
+            --accent-color: #c5a059;  /* Professional Muted Gold/Brass tint */
+            --bg-light: #f4f6f9;
+            --border-color: #d2d7df;
+            --text-dark: #1e2530;
+            --text-muted: #5a6578;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 1200px;
+            color: var(--text-dark);
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 24px;
             background-color: #ffffff;
+        }
+
+        /* Top Navigation Bar */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* Executive Header branding */
+        .author-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background-color: var(--bg-light);
+            padding: 8px 16px;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+        }
+
+        .author-img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-color);
+            background-color: #eaeaea;
+        }
+
+        .author-info span {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-color);
         }
 
         .header-section {
             text-align: center;
-            padding: 40px 0;
-            border-bottom: 2px solid var(--border-color);
+            padding: 20px 0 35px 0;
         }
 
         .header-section h1 {
             color: var(--primary-color);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .header-section p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Practitioner Disclaimer Note Box */
+        .practitioner-note {
+            background-color: #fffdf6;
+            border-left: 4px solid var(--accent-color);
+            border-top: 1px solid #f5ebd0;
+            border-right: 1px solid #f5ebd0;
+            border-bottom: 1px solid #f5ebd0;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 40px;
+            font-size: 0.92rem;
+            color: #4a5464;
+        }
+
+        .practitioner-note strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.98rem;
         }
 
         /* Tab Switchers */
         .tab-container {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
+            gap: 16px;
+            margin-bottom: 25px;
         }
 
         .tab-btn {
-            background: none;
+            background-color: #ffffff;
             border: 2px solid var(--primary-color);
             color: var(--primary-color);
-            padding: 10px 24px;
-            font-weight: 600;
+            padding: 12px 28px;
+            font-weight: 700;
+            font-size: 1rem;
             cursor: pointer;
             border-radius: 6px;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
         }
 
         .tab-btn.active, .tab-btn:hover {
             background-color: var(--primary-color);
             color: #fff;
+            box-shadow: 0 4px 12px rgba(27, 58, 107, 0.15);
         }
 
-        /* Responsive Prompt Cards Container */
+        /* Quick Navigation & Dropdown Filtering Layout */
+        .filter-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--bg-light);
+            padding: 16px 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin: 35px 0 25px 0; /* Ensures strong spacing under category tabs */
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .filter-label {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .dropdown-menu {
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: #ffffff;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            min-width: 180px;
+        }
+
+        .dropdown-menu:focus {
+            border-color: var(--primary-color);
+        }
+
+        .counter-badge {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Prompt Cards Layout Container */
         .prompt-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
-            margin-top: 20px;
+            gap: 24px;
         }
 
         .prompt-card {
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 20px;
-            background-color: var(--bg-light);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            padding: 24px;
+            background-color: #ffffff;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.015);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .prompt-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(27, 58, 107, 0.05);
         }
 
         .card-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             border-bottom: 1px dashed var(--border-color);
-            padding-bottom: 8px;
+            padding-bottom: 12px;
         }
 
         .badge-phase {
             background-color: var(--primary-color);
             color: white;
-            padding: 4px 10px;
+            padding: 5px 12px;
             border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
         }
 
         .task-title {
+            font-size: 1.1rem;
             font-weight: 700;
-            color: #2d3748;
+            color: var(--text-dark);
         }
 
         .prompt-text-box {
-            background-color: #ffffff;
+            background-color: var(--bg-light);
             border-left: 4px solid var(--accent-color);
-            padding: 15px;
-            margin: 15px 0;
+            padding: 18px;
+            margin: 15px 0 0 0;
             font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
+            line-height: 1.55;
             position: relative;
+            border-radius: 0 6px 6px 0;
+            white-space: pre-wrap;
         }
 
         .copy-btn {
             float: right;
-            background-color: #edf2f7;
-            border: none;
-            padding: 6px 12px;
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 0.85rem;
-            transition: background 0.2s;
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            margin-left: 15px;
+            margin-bottom: 10px;
         }
 
         .copy-btn:hover {
-            background-color: var(--accent-color);
+            background-color: var(--primary-color);
             color: white;
+            border-color: var(--primary-color);
         }
     </style>
 </head>
 <body>
 
+    <!-- Top Toolbar Navigation -->
+    <div class="top-nav">
+        <a href="index.html" class="back-link">&larr; Back to Portfolio Homepage</a>
+        <div class="author-badge">
+            <img src="profile.jpg" alt="Vasiliki Noela Ntavranoglou" class="author-img" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=150&auto=format&fit=crop'">
+            <div class="author-info">
+                <span>Vasiliki Noela Ntavranoglou</span>
+            </div>
+        </div>
+    </div>
+
     <div class="header-section">
         <h1>SRA-Compliant Prompt Engineering Frameworks</h1>
-        <p>Grounded Legal Engineering Assets optimized for Civil Procedure Rules (CPR) workflows in UK Insurance Litigation.</p>
+        <p>Grounded Legal Engineering Assets optimised for Civil Procedure Rules (CPR) workflows in UK Insurance Litigation.</p>
     </div>
 
+    <!-- Practitioner Disclaimer Note -->
+    <div class="practitioner-note">
+        <strong>A Message for Legal Practitioners & Insurance Professionals:</strong>
+        These prompt frameworks are specifically structured to maintain absolute compliance with SRA data security requirements and Solicitors Regulation Authority guidance on generative AI deployment. They utilize anonymised corporate structural tags (e.g., <code>[Policy Wording]</code>, <code>[Medical Report]</code>) to enforce granular sandbox parameters. By operating strictly within the bounding boundaries of established UK precedents and procedural rules, they eliminate structural hallucination risks when interacting with complex liability models. Feel free to copy, test, and integrate them into your firm's workflows.
+    </div>
+
+    <!-- Primary Stream Tabs -->
     <div class="tab-container">
-        <button class="tab-btn active" onclick="filterCategory('rta', this)">UK RTA Claims (Citizen vs Citizen)</button>
-        <button class="tab-btn" onclick="filterCategory('commercial', this)">Multi-Million Commercial & Product Liability</button>
+        <button class="tab-btn active" onclick="switchCategory('rta', this)">UK RTA Claims</button>
+        <button class="tab-btn" onclick="switchCategory('commercial', this)">Commercial & Product Liability Claims</button>
     </div>
 
+    <!-- Interactive Search, Filtering, and Quick-Navigation Toolbar -->
+    <div class="filter-toolbar">
+        <div class="filter-group">
+            <label class="filter-label" for="phaseFilter">Filter by Practice Phase:</label>
+            <select class="dropdown-menu" id="phaseFilter" onchange="applyPhaseFilter()">
+                <option value="ALL">Show All Phases</option>
+                <!-- Dynamically Populated -->
+            </select>
+        </div>
+        <div class="counter-badge" id="resultsCounter">Showing 0 frameworks</div>
+    </div>
+
+    <!-- Prompt Target Layout Grid -->
     <div class="prompt-grid" id="promptGrid">
         <!-- Rendered Dynamically by JavaScript -->
     </div>
 
     <script>
         let allPrompts = [];
+        let currentCategory = 'rta';
 
-        // Fetch data seamlessly from your data/prompts.json file
+        // Load the dataset seamlessly from data/prompts.json
         async function loadPrompts() {
             try {
                 const response = await fetch('data/prompts.json');
                 allPrompts = await response.json();
-                renderPrompts('rta'); // Default to showing RTA first
+                populateDropdownOptions();
+                renderFilteredPrompts();
             } catch (error) {
                 console.error("Error loading the prompt asset library:", error);
+                document.getElementById('promptGrid').innerHTML = '<p style="text-align:center; color:red; font-weight:bold;">Error loading prompt database. Ensure data/prompts.json is populated correctly.</p>';
             }
         }
 
-        function renderPrompts(category) {
+        // Dynamically build dropdown choices based on what fields exist in current category rows
+        function populateDropdownOptions() {
+            const dropdown = document.getElementById('phaseFilter');
+            dropdown.innerHTML = '<option value="ALL">Show All Phases</option>';
+            
+            // Extract unique categories based on current tab selection
+            const filtered = allPrompts.filter(p => p.category === currentCategory);
+            const uniquePhases = [...new Set(filtered.map(p => p.phase))].sort();
+            
+            uniquePhases.forEach(phase => {
+                const opt = document.createElement('option');
+                opt.value = phase;
+                opt.innerText = phase;
+                dropdown.appendChild(opt);
+            });
+        }
+
+        function renderFilteredPrompts() {
             const grid = document.getElementById('promptGrid');
+            const selectedPhase = document.getElementById('phaseFilter').value;
             grid.innerHTML = '';
             
-            const filtered = allPrompts.filter(p => p.category === category);
+            // Filter down data arrays natively
+            let records = allPrompts.filter(p => p.category === currentCategory);
+            if (selectedPhase !== 'ALL') {
+                records = records.filter(p => p.phase === selectedPhase);
+            }
             
-            filtered.forEach(p => {
+            // Counter indicator update
+            document.getElementById('resultsCounter').innerText = `Showing ${records.length} framework${records.length === 1 ? '' : 's'}`;
+            
+            if(records.length === 0) {
+                grid.innerHTML = '<div style="text-align:center; padding:40px; color:var(--text-muted); font-weight:600;">No prompt frameworks found matching this criteria.</div>';
+                return;
+            }
+
+            records.forEach(p => {
                 const card = document.createElement('div');
                 card.className = 'prompt-card';
                 card.innerHTML = `
@@ -169,19 +382,22 @@
                         <span class="task-title">${p.task}</span>
                         <span class="badge-phase">${p.phase}</span>
                     </div>
-                    <div class="prompt-text-box">
-                        <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
-                        <span class="prompt-content">${p.prompt}</span>
-                    </div>
+                    <div class="prompt-text-box"><button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button><span class="prompt-content">${p.prompt}</span></div>
                 `;
                 grid.appendChild(card);
             });
         }
 
-        function filterCategory(category, element) {
+        function switchCategory(category, element) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             element.classList.add('active');
-            renderPrompts(category);
+            currentCategory = category;
+            populateDropdownOptions();
+            renderFilteredPrompts();
+        }
+
+        function applyPhaseFilter() {
+            renderFilteredPrompts();
         }
 
         function copyPrompt(button) {
@@ -189,12 +405,13 @@
             navigator.clipboard.writeText(text);
             const originalText = button.innerText;
             button.innerText = "Copied! \u2713";
-            button.style.backgroundColor = "#d4af37";
+            button.style.backgroundColor = "#1b3a6b";
             button.style.color = "white";
             setTimeout(() => {
                 button.innerText = originalText;
-                button.style.backgroundColor = "#edf2f7";
-                button.style.color = "#333";
+                button.style.backgroundColor = "#ffffff";
+                button.style.color = "var(--text-dark)";
+                button.style.borderColor = "var(--border-color)";
             }, 2000);
         }
 
