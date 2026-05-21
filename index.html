@@ -55,7 +55,7 @@
   }
   .nav-links a:hover { color: var(--navy); }
 
-  /* ── HERO ── */
+ /* ── HERO ── */
   .hero {
     min-height: 100vh;
     background: #1B3A6B;
@@ -78,6 +78,33 @@
     background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 70%);
     pointer-events: none;
   }
+  
+  /* Executive Headshot Layout Accent */
+  .hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    max-width: 900px;
+  }
+  .hero-portrait {
+    width: 160px;  
+    height: 160px;
+    border-radius: 6px; /* Crisp square with premium subtle softening */
+    object-fit: cover;
+    border: 1px solid rgba(201,169,110,0.3); /* Subtle muted gold frame border */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    flex-shrink: 0;
+    background-color: #eaeaea;
+  }
+  @media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 24px;
+    }
+  }
+
   .hero-tag {
     font-family: 'DM Mono', monospace;
     font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em;
@@ -469,10 +496,17 @@
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-tag">Legal AI Specialist · London, UK · Vasiliki Noela Ntavranoglou</div>
-  <h1>Vasiliki Noela<br><em>Ntavranoglou</em></h1>
-  <p class="hero-sub">
-    Legal professional with 5+ years in litigation and contract law, now specialising in Legal AI implementation, prompt engineering, and AI governance. Bridging law and technology.
-  </p>
+  
+  <div class="hero-container">
+    <div>
+      <h1>Vasiliki Noela<br><em>Ntavranoglou</em></h1>
+      <p class="hero-sub">
+        Legal professional with 5+ years in litigation and contract law, now specialising in Legal AI implementation, prompt engineering, and AI governance. Bridging law and technology.
+      </p>
+    </div>
+    <img src="profile.jpg" alt="Vasiliki Noela Ntavranoglou" class="hero-portrait" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop'">
+  </div>
+
   <div class="hero-badges">
     <span class="badge gold">Clio AI Fundamentals 2026</span>
     <span class="badge gold">Elements of AI · Helsinki</span>
