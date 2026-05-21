@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Legal Engineering Portfolio | Insurance Law Prompts</title>
+    <style>
+        /* Modern Portfolio Styling Accents */
+        :root {
+            --primary-color: #1a2a3a; /* Deep Legal Navy Blue */
+            --accent-color: #d4af37;  /* Professional Gold/Brass tint */
+            --bg-light: #f8f9fa;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        .header-section {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .header-section h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Tab Switchers */
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .tab-btn {
+            background: none;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Responsive Prompt Cards Container */
+        .prompt-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .prompt-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            background-color: var(--bg-light);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .badge-phase {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .task-title {
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .prompt-text-box {
+            background-color: #ffffff;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 15px 0;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.95rem;
+            position: relative;
+        }
+
+        .copy-btn {
+            float: right;
+            background-color: #edf2f7;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>SRA-Compliant Prompt Engineering Frameworks</h1>
+        <p>Grounded Legal Engineering Assets optimized for Civil Procedure Rules (CPR) workflows in UK Insurance Litigation.</p>
+    </div>
+
+    <div class="tab-container">
+        <button class="tab-btn active" onclick="filterCategory('rta', this)">UK RTA Claims (Citizen vs Citizen)</button>
+        <button class="tab-btn" onclick="filterCategory('commercial', this)">Multi-Million Commercial & Product Liability</button>
+    </div>
+
+    <div class="prompt-grid" id="promptGrid">
+        <!-- Rendered Dynamically by JavaScript -->
+    </div>
+
+    <script>
+        let allPrompts = [];
+
+        // Fetch data seamlessly from your data/prompts.json file
+        async function loadPrompts() {
+            try {
+                const response = await fetch('data/prompts.json');
+                allPrompts = await response.json();
+                renderPrompts('rta'); // Default to showing RTA first
+            } catch (error) {
+                console.error("Error loading the prompt asset library:", error);
+            }
+        }
+
+        function renderPrompts(category) {
+            const grid = document.getElementById('promptGrid');
+            grid.innerHTML = '';
+            
+            const filtered = allPrompts.filter(p => p.category === category);
+            
+            filtered.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'prompt-card';
+                card.innerHTML = `
+                    <div class="card-meta">
+                        <span class="task-title">${p.task}</span>
+                        <span class="badge-phase">${p.phase}</span>
+                    </div>
+                    <div class="prompt-text-box">
+                        <button class="copy-btn" onclick="copyPrompt(this)">Copy Prompt</button>
+                        <span class="prompt-content">${p.prompt}</span>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterCategory(category, element) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+            renderPrompts(category);
+        }
+
+        function copyPrompt(button) {
+            const text = button.nextElementSibling.innerText;
+            navigator.clipboard.writeText(text);
+            const originalText = button.innerText;
+            button.innerText = "Copied! \u2713";
+            button.style.backgroundColor = "#d4af37";
+            button.style.color = "white";
+            setTimeout(() => {
+                button.innerText = originalText;
+                button.style.backgroundColor = "#edf2f7";
+                button.style.color = "#333";
+            }, 2000);
+        }
+
+        window.onload = loadPrompts;
+    </script>
+</body>
+</html>
